@@ -1,4 +1,4 @@
-require "array"
+require "dotted_rulers/array"
 require "dotted_rulers/version"
 
 module DottedRulers

@@ -1,18 +1,18 @@
 class Array
-
+  # Add
   def sum(start = 0)
     inject(start, &:+)
   end
-
-  def subtract(start = 0)
+  # Subtract
+  def diff(start = 0)
     inject(start, &:-)
   end
-
-  def multiply(start = 0)
+  # Multiply
+  def product(start = 0)
     inject(start, &:*)
   end
-
-  def divide(start = 0)
+  # Divide
+  def quotient(start = 0)
     inject(start, &:/)
   end
 
