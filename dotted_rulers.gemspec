@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = DottedRulers::VERSION
   spec.authors       = ["Scott"]
   spec.email         = ["scott@dottedt.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{An excersize in creating a Rack-based Web Framework}
+  spec.summary       = %q{Deep-ish dive into building a Ruby Web Framework from scratch}
   spec.homepage      = ""
   spec.license       = "MIT"
 
