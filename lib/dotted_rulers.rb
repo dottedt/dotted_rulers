@@ -6,10 +6,10 @@ module DottedRulers
   class Application
     def call(env)
       klass, act = get_controller_and_action(env)
-      controller = Klass.new(env)
+      controller = klass.new(env)
       text = controller.send(act)
       [200, {'Content-Type' => 'text/html'},
-        ["Hello to Scott from Ruby on Rulers!"]]
+       [text]]
     end
   end
 
