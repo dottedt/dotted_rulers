@@ -16,7 +16,7 @@ module DottedRulers
       rescue Exception => e
         return [500, {'Content-Type' => 'text/html'},
          ["Whoa! Something supper colossal happend....  ",
-          "Message from page:  #{e}",
+          "Message from page:  #{e.message}",
           ]
          ]
       end
