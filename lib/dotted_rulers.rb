@@ -6,7 +6,7 @@ module DottedRulers
   class Application
     def call(env)
       if env['PATH_INFO']  == '/favicon.ico'
-        return [404, {'Content-Type' => 'text/html'}[]]
+        return [404, {'Content-Type' => 'text/html'},[]]
       end
 
       klass, act = get_controller_and_action(env)
@@ -16,7 +16,7 @@ module DottedRulers
       rescue Exception => e
         return [500, {'Content-Type' => 'text/html'},
          ["Whoa! Something supper colossal happend....  ",
-          "Message from page:  #{e.message}",
+          "Message from page:  #{e}",
           ]
          ]
       end
