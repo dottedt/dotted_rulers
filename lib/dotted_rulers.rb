@@ -3,6 +3,7 @@ require "dotted_rulers/version"
 require "dotted_rulers/routing"
 require "dotted_rulers/util"
 require "dotted_rulers/dependencies"
+require "dotted_rulers/controller"
 
 module DottedRulers
   class Application
@@ -29,14 +30,14 @@ module DottedRulers
     end
   end
 
-  class Controller
-    def initialize(env)
-      @env = env
-    end
+  # class Controller
+  #   def initialize(env)
+  #     @env = env
+  #   end
 
-    def env
-      @env
-    end
-  end
+  #   def env
+  #     @env
+  #   end
+  # end
 
 end
