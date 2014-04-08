@@ -1,6 +1,15 @@
 require_relative "test_helper"
 
+class TestController < DottedRulers::Controller
+  def index
+    "Hello!"
+  end
+end
+
 class TestApp < DottedRulers::Application
+  def get_controller_and_action(env)
+    [TestController, "index"]
+  end
 end
 
 class DottedRulersAppTest < Test::Unit::TestCase
@@ -11,11 +20,11 @@ class DottedRulersAppTest < Test::Unit::TestCase
   end
 
   def test_request
-    get "/"
+    get "/example/route"
 
     assert last_response.ok?
     body = last_response.body
-    assert body["Scott"]
+    assert body["Hello"]
   end
 
   def test_greeting
