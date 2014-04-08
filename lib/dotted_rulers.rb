@@ -1,6 +1,8 @@
 require "dotted_rulers/array"
 require "dotted_rulers/version"
 require "dotted_rulers/routing"
+require "dotted_rulers/util"
+require "dotted_rulers/dependencies"
 
 module DottedRulers
   class Application
