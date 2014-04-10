@@ -1,7 +1,10 @@
 require "erubis"
+require "dotted_rulers/file_model"
 
 module DottedRulers
   class Controller
+    include DottedRulers::Model
+
     def initialize(env)
       @env = env
     end
