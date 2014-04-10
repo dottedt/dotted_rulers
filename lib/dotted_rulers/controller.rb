@@ -1,5 +1,6 @@
 require "erubis"
 require "dotted_rulers/file_model"
+require "rack/request"
 
 module DottedRulers
   class Controller
@@ -11,6 +12,13 @@ module DottedRulers
 
     def env
       @env
+    end
+
+    def request
+      @request ||= Rack::Request.new(@env)
+    end
+    def params
+      request.params
     end
 
     def controller_name
@@ -25,5 +33,20 @@ module DottedRulers
       eruby = Erubis::Eruby.new(template)
       eruby.result locals.merge(env: env)
     end
+
+    def response(text, status = 200, headers = {})
+      raise "Already Responded stupid!" if @response
+      a = [text].flatten
+      @response = Rack::Response.new(a, status, headers)
+    end
+
+    def get_response
+      @response
+    end
+
+    def render_response(*args)
+      response(render(*args))
+    end
+
   end
 end

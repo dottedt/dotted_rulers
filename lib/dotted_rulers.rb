@@ -19,15 +19,18 @@ module DottedRulers
         text = controller.send(act)
       rescue Exception => e
         return [500, {'Content-Type' => 'text/html'},
-         ["Whoa! Something supper colossal happend....  ",
-          "Message from page:  #{e}",
-          ]
-         ]
+                ["Whoa! Something supper colossal happend....  ",
+                 "Message from page:  #{e}",
+                 ]
+                ]
       end
+      if controller.get_response
+        st, hd, rs = controller.get_response.to_a[st, hd [rs.body].flatten]
+      else
 
-      [200, {'Content-Type' => 'text/html'},
-       [text]]
-
+        [200, {'Content-Type' => 'text/html'},
+         [text]]
+      end
     end
   end
 
