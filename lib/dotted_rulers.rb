@@ -4,6 +4,7 @@ require "dotted_rulers/routing"
 require "dotted_rulers/util"
 require "dotted_rulers/dependencies"
 require "dotted_rulers/controller"
+require "dotted_rulers/file_model"
 
 module DottedRulers
   class Application
