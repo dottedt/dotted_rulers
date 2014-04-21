@@ -1,6 +1,6 @@
 # DottedRulers
 
-TODO: Write a gem description
+  Rebuilding Rails: Get Your Hands Dirty and Build Your Own Ruby Web Framework
 
 ## Installation
 
@@ -18,12 +18,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+  Just an example application for getting to know Rails intimatly.
 
-## Contributing
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+
+
