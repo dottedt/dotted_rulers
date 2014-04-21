@@ -8,6 +8,27 @@ module DottedRulers
 
     def initialize(env)
       @env = env
+      @routing_params = {}
+    end
+
+    def dispatch(action, routing_params = {})
+      @routing_params = routing_params
+      text = self.send(action)
+      if get_response
+        st, hd, rs = get_response.to_a
+        [st, hd, [rs].flatten]
+      else
+        [200, {'Content-Type' => 'text/html'},
+         [text].flatten]
+      end
+    end
+
+    def self.action(act, rp = {})
+      proc { |e| self.new(e).dispatch(act, rp) }
+    end
+
+    def params
+      request.params.merge @routing_params
     end
 
     def env
@@ -17,6 +38,7 @@ module DottedRulers
     def request
       @request ||= Rack::Request.new(@env)
     end
+
     def params
       request.params
     end

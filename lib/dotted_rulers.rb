@@ -13,8 +13,9 @@ module DottedRulers
         return [404, {'Content-Type' => 'text/html'},[]]
       end
 
-      klass, act = get_controller_and_action(env)
-      controller = klass.new(env)
+
+      rack_app = get_rack_app(env)
+      rack_app.call(env)
       begin
         text = controller.send(act)
       rescue Exception => e

@@ -9,9 +9,11 @@ module DottedRulers
         obj = File.read(filename)
         @hash = MultiJson.load(obj)
       end
+
       def [](name)
         @hash[name.to_s]
       end
+
       def []=(name, value)
         @hash[name.to_s] = value
       end
@@ -23,10 +25,12 @@ module DottedRulers
           return nil
         end
       end
+
       def self.all
         files = Dir["db/quotes/*.json"]
         files.map { |f| FileModel.new f }
       end
+
       def self.create(attrs)
         hash = {}
         hash["submitter"] = attrs["submitter"] || ""
